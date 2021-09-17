@@ -1,0 +1,33 @@
+body{
+    background-color: #d9dbd5;
+    height: 100vh;
+    padding: 20px 0;
+}
+
+.container{
+    background-color: forestgreen;
+    height: 100%;
+}
+
+.row{
+    height: 100%;
+}
+
+#bg-darkgreen{
+    background-color: #009688;
+    height: 15%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#chat-list{
+    background-color: fuchsia;
+    height: 100%;
+}
+
+#text-chat{
+    background-color: gold;
+    height: 100%;
+}
