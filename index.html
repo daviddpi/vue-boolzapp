@@ -20,7 +20,7 @@
     <title>Boolzapp</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root" class="mega-container">
         <div id="bg-darkgreen"></div>
 
         <div class="container">
@@ -56,12 +56,12 @@
 
                     <!-- chat -->
                     <section id="chat-section"> 
-                        <div v-for="(user, index) in contacts" class="my_chat d-flex justify-content-between">
+                        <div v-for="(user, index) in myContacts" class="my_chat d-flex justify-content-between">
                             <div class="d-flex">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="user.img" alt="immagine avatar">
                                 <div>
-                                    <h6>{{ user }}</h6>
-                                    <p>Tutto Fatto! ..</p>
+                                    <h6>{{ user.name }}</h6>
+                                    <p>{{ user.messages[mexLength].text }} ..</p>
                                 </div>
                             </div>
                             
@@ -69,12 +69,11 @@
                         </div>
                     </section>
                 </div>
-
                 <!-- parte destra  -->
                 <div class="col-8" id="text-chat"></div>
             </div>
         </div>
-
+    </div>
     <script src="js/myscript.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 let main = new Vue({
 
     el: "#root",
-    data:{
+    data: {
 
         contacts: [
             {
@@ -99,8 +99,11 @@ let main = new Vue({
     methods: {
         copyArray(){
             this.contacts.forEach(element => {
+                element.img = `img/avatar${element.avatar}.jpg`;
+                element.mexLength = element.messages.length;
                 this.myContacts.push(element);
             });
+            
         }
     },
     
@@ -108,6 +111,5 @@ let main = new Vue({
         this.copyArray();
         console.log(this.contacts);
         console.log(this.myContacts);
-
     }
 });

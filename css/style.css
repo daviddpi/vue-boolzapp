@@ -4,6 +4,10 @@ body{
     padding: 20px 0;
 }
 
+.mega-container{
+    height: 100%;
+}
+
 .container{
     background-color: forestgreen;
     height: 100%;
