@@ -61,11 +61,11 @@
                                 <img :src="user.img" alt="immagine avatar">
                                 <div>
                                     <h6>{{ user.name }}</h6>
-                                    <p>{{ user.messages[mexLength].text }} ..</p>
+                                    <p class="user-message">{{ user.messages[user.mexLength].text }} ..</p>
                                 </div>
                             </div>
                             
-                            <p id="time-chat">10/01/2020 16:15:22</p>
+                            <p class="time-chat">{{ user.messages[user.mexLength].date }}</p>
                         </div>
                     </section>
                 </div>

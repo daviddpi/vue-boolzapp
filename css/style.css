@@ -42,6 +42,11 @@ body{
     color: grey;
 }
 
+.user-message{
+    overflow: auto;
+    /* max-width: 50%; */
+}
+
 #chat-section{
     overflow: auto;
 }

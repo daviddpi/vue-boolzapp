@@ -100,7 +100,7 @@ let main = new Vue({
         copyArray(){
             this.contacts.forEach(element => {
                 element.img = `img/avatar${element.avatar}.jpg`;
-                element.mexLength = element.messages.length;
+                element.mexLength = element.messages.length - 1;
                 this.myContacts.push(element);
             });
             
