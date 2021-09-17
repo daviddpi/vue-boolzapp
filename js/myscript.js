@@ -91,10 +91,23 @@ let main = new Vue({
                 ],
             },
         ],
+
+        myContacts: [],
+        
     },
+
     methods: {
+        copyArray(){
+            this.contacts.forEach(element => {
+                this.myContacts.push(element);
+            });
+        }
+    },
+    
+    mounted(){
+        this.copyArray();
+        console.log(this.contacts);
+        console.log(this.myContacts);
 
     }
-
 });
-console.log("cioa");
