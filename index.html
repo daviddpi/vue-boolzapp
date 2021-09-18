@@ -29,7 +29,7 @@
                 <div class="col-4 p-0" id="chat-list">
 
                     <!-- user avatar, nome e opzioni -->
-                    <div id="user-header" class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center justify-content-between user-header">
                         <div class="d-flex align-items-center">
                             <img src="img/avatar_io.jpg" alt="mio avatar">
                             <h6>Nome Utente</h6>
@@ -55,7 +55,7 @@
                     </div>
 
                     <!-- chat -->
-                    <div class="d-flex" id="container-chat-scrollbar">
+                    <div class="d-flex container-chat-scrollbar">
                         <section id="chat-section"> 
                             <div v-for="(user, index) in myContacts" class="my_chat d-flex justify-content-between">
                                 <div class="d-flex">
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 
-                                <p class="time-chat">{{ user.messages[user.messages.length - 1].date }}</p>
+                                <p>{{ user.messages[user.messages.length - 1].date }}</p>
                             </div>
                         </section>
                         <div class="scrollbar d-flex flex-column-reverse justify-content-between">
@@ -77,8 +77,52 @@
                 </div>
 
                 <!-- parte destra  -->
-                <div class="col-8" id="text-chat">
+                <div class="col-8 p-0" id="text-chat">
                     
+                    <!-- nome e ultimo accesso -->
+                    <div class="d-flex align-items-center justify-content-between user-header">
+                        <div class="d-flex align-items-center ">
+                            <img src="img/avatar_io.jpg" alt="mio avatar">
+                            <div class="my_chat">
+                                <h6>Michele</h6>
+                                <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+                            </div>
+                        </div>
+                        <div class="opzion-icon">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+
+                    <!-- sezione messaggi inviati e in arrivo -->
+                    <div class="d-flex container-chat-scrollbar">
+                        <div id="wallpaper-chat">
+                            <div class="send-mex mex">
+                                <p>Hai portato a spasso il cane?</p>
+                                <p class="time-send">10/01/2020 16:15:22</p>
+                            </div>
+                            <div class="send-mex mex">
+                                <p>Ricordati di dargli da mangiare</p>
+                                <p class="time-send">10/01/2020 16:15:28</p>
+                            </div>
+                            <div class="recive-mex mex">
+                                <p>Tutto Fatto!</p>
+                                <p class="time-send">10/01/2020 16:18:22</p>
+                            </div>
+                        </div>
+                        <div class="scrollbar d-flex flex-column-reverse justify-content-between">
+                            <i class="fas fa-angle-down"></i>
+                            <i class="fas fa-angle-up"></i>
+                        </div>
+                    </div>
+
+                    <!-- sezione digitare un messaggio -->
+                    <div class="d-flex align-items-center" id="write-message">
+                        <i class="far fa-smile"></i>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <i class="fas fa-microphone"></i>
+                    </div>
                 </div>
             </div>
         </div>
