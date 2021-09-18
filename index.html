@@ -55,22 +55,31 @@
                     </div>
 
                     <!-- chat -->
-                    <section id="chat-section"> 
-                        <div v-for="(user, index) in myContacts" class="my_chat d-flex justify-content-between">
-                            <div class="d-flex">
-                                <img :src="user.img" alt="immagine avatar">
-                                <div>
-                                    <h6>{{ user.name }}</h6>
-                                    <p class="user-message">{{ user.messages[user.mexLength].text }} ..</p>
+                    <div class="d-flex" id="container-chat-scrollbar">
+                        <section id="chat-section"> 
+                            <div v-for="(user, index) in myContacts" class="my_chat d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <img :src="user.img" alt="immagine avatar">
+                                    <div>
+                                        <h6>{{ user.name }}</h6>
+                                        <p class="user-message">{{ user.messages[user.messages.length - 1].text }} ..</p>
+                                    </div>
                                 </div>
+                                
+                                <p class="time-chat">{{ user.messages[user.messages.length - 1].date }}</p>
                             </div>
-                            
-                            <p class="time-chat">{{ user.messages[user.mexLength].date }}</p>
+                        </section>
+                        <div class="scrollbar d-flex flex-column-reverse justify-content-between">
+                            <i class="fas fa-angle-down"></i>
+                            <i class="fas fa-angle-up"></i>
                         </div>
-                    </section>
+                    </div>
                 </div>
+
                 <!-- parte destra  -->
-                <div class="col-8" id="text-chat"></div>
+                <div class="col-8" id="text-chat">
+                    
+                </div>
             </div>
         </div>
     </div>

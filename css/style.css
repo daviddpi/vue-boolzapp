@@ -44,7 +44,21 @@ body{
 
 .user-message{
     overflow: auto;
-    /* max-width: 50%; */
+}
+
+.scrollbar{
+    width: 15px;
+    height: 100%;
+    background-color: #f0f0f0;
+    padding: 2px;
+}
+
+.scrollbar i{
+    font-size: 0.8rem;
+}
+
+.scrollbar i:hover{
+    cursor: pointer;
 }
 
 #chat-section{
@@ -62,12 +76,10 @@ body{
 
 #chat-list{
     background-color: #ffffff;
-    height: 100%;
 }
 
 #text-chat{
     background-color: gold;
-    height: 100%;
 }
 
 #user-header{
@@ -141,6 +153,6 @@ body{
     width: 100%;
 }
 
-#chat-section{
-    width: 95%;
+#container-chat-scrollbar{
+    height: calc(100% - 188px);
 }
