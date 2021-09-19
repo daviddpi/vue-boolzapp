@@ -97,18 +97,38 @@ let main = new Vue({
     },
 
     methods: {
-        copyArray(){
-            this.contacts.forEach(element => {
+        //aggiunge l'immagine come elemento all'interno dell'array copiato
+        addElement(){
+            this.myContacts.forEach(element => {
                 element.img = `img/avatar${element.avatar}.jpg`;
-                this.myContacts.push(element);
             });
-            
         }
     },
+
+    computed: {
+
+        //copia l'array e Vue sa quando aggiornare il DOM quando uno dei valori dipendenti dall'array copiato è cambiato
+        copyArray(){
+            this.myContacts = this.contacts.slice();          
+        },      
+    },
     
+    //mount() viene chiamato dopo che DOM è stato creato in modo da poter accedere ai modelli e agli elementi DOM e manipolarli
     mounted(){
-        this.copyArray();
-        console.log(this.contacts);
-        console.log(this.myContacts);
+        this.copyArray;
+        this.addElement();
+        console.log("original: ",this.contacts);
+        console.log("copy: ",this.myContacts);   
+    },
+
+    //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri
+    filters: {
+        cutString(str){
+            if(str.length > 20){
+                return str.slice(0, 22) + "..";
+            }
+            return str;
+        }
     }
+
 });

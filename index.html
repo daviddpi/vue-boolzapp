@@ -55,14 +55,14 @@
                     </div>
 
                     <!-- chat -->
-                    <div class="d-flex container-chat-scrollbar">
+                    <div class="d-flex container-chat-scrollbar justify-content-between">
                         <section id="chat-section"> 
                             <div v-for="(user, index) in myContacts" class="my_chat d-flex justify-content-between">
                                 <div class="d-flex">
                                     <img :src="user.img" alt="immagine avatar">
                                     <div>
                                         <h6>{{ user.name }}</h6>
-                                        <p class="user-message">{{ user.messages[user.messages.length - 1].text }} ..</p>
+                                        <p class="user-message">{{ user.messages[user.messages.length - 1].text | cutString() }} </p>
                                     </div>
                                 </div>
                                 
