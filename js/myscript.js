@@ -102,14 +102,15 @@ let main = new Vue({
             this.myContacts.forEach(element => {
                 element.img = `img/avatar${element.avatar}.jpg`;
             });
-        }
+        },
+        
     },
 
     computed: {
 
         //copia l'array e Vue sa quando aggiornare il DOM quando uno dei valori dipendenti dall'array copiato è cambiato
         copyArray(){
-            this.myContacts = this.contacts.slice();          
+            this.myContacts = this.contacts.slice();      
         },      
     },
     
@@ -118,7 +119,7 @@ let main = new Vue({
         this.copyArray;
         this.addElement();
         console.log("original: ",this.contacts);
-        console.log("copy: ",this.myContacts);   
+        console.log("copy: ",this.myContacts); 
     },
 
     //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri
