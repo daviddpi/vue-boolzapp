@@ -57,9 +57,9 @@
                     <!-- chat -->
                     <div class="d-flex container-chat-scrollbar justify-content-between">
                         <section id="chat-section"> 
-                            <div v-for="(user, index) in myContacts" class="my_chat d-flex justify-content-between">
+                            <div @click="chooceContact(index)" v-for="(user, index) in myContacts" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
                                 <div class="d-flex">
-                                    <img :src="user.img" alt="immagine avatar">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" alt="immagine avatar">
                                     <div>
                                         <h6>{{ user.name }}</h6>
                                         <p class="user-message">{{ user.messages[user.messages.length - 1].text | cutString() }} </p>
@@ -82,9 +82,9 @@
                     <!-- nome e ultimo accesso -->
                     <div class="d-flex align-items-center justify-content-between user-header">
                         <div class="d-flex align-items-center ">
-                            <img src="img/avatar_io.jpg" alt="mio avatar">
+                            <img :src="`img/avatar${myContacts[indexContact].avatar}.jpg`" alt="avatar contact">
                             <div class="my_chat">
-                                <h6>Michele</h6>
+                                <h6>{{ myContacts[indexContact].name }}</h6>
                                 <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
                             </div>
                         </div>
@@ -98,14 +98,14 @@
                     <!-- sezione messaggi inviati e in arrivo -->
                     <div class="d-flex container-chat-scrollbar">
                         <div id="wallpaper-chat">
-                            <div class="send-mex mex">
-                                <p>Hai portato a spasso il cane?</p>
+                            <div v-for="(user, index) in myContacts" class="send-mex mex">
+                                <p>{{ user }}</p>
                                 <p class="time-send">10/01/2020 16:15:22</p>
                             </div>
-                            <div class="send-mex mex">
+                            <!-- <div class="send-mex mex">
                                 <p>Ricordati di dargli da mangiare</p>
                                 <p class="time-send">10/01/2020 16:15:28</p>
-                            </div>
+                            </div> -->
                             <div class="recive-mex mex">
                                 <p>Tutto Fatto!</p>
                                 <p class="time-send">10/01/2020 16:18:22</p>

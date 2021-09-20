@@ -1,4 +1,4 @@
-let main = new Vue({
+let app = new Vue({
 
     el: "#root",
     data: {
@@ -93,17 +93,24 @@ let main = new Vue({
         ],
 
         myContacts: [],
+        indexContact: 0,
         
     },
 
-    methods: {
-        //aggiunge l'immagine come elemento all'interno dell'array copiato
-        addElement(){
-            this.myContacts.forEach(element => {
-                element.img = `img/avatar${element.avatar}.jpg`;
-            });
+    methods: {  
+        //cliccando su una delle chat, cambia l'indice dell'array
+        chooceContact(index){
+            this.indexContact = index;
+            console.log("index: ",this.indexContact); 
         },
         
+    },
+
+    created(){
+        this.copyArray;
+        this.indexContact = 0;
+        console.log("original: ",this.contacts);
+        console.log("copy: ",this.myContacts);
     },
 
     computed: {
@@ -114,13 +121,6 @@ let main = new Vue({
         },      
     },
     
-    //mount() viene chiamato dopo che DOM è stato creato in modo da poter accedere ai modelli e agli elementi DOM e manipolarli
-    mounted(){
-        this.copyArray;
-        this.addElement();
-        console.log("original: ",this.contacts);
-        console.log("copy: ",this.myContacts); 
-    },
 
     //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri
     filters: {

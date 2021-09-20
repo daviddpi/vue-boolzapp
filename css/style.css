@@ -59,6 +59,10 @@ body{
     overflow: auto;
 }
 
+.bg-active{
+    background-color: #e9ebeb;
+}
+
 .scrollbar{
     width: 15px;
     height: 100%;
