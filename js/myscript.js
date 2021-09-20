@@ -95,6 +95,7 @@ let app = new Vue({
         myContacts: [],
         indexContact: 0,
         addNewMessages: "",
+        count: 0,
     },
 
     methods: {  
@@ -103,17 +104,38 @@ let app = new Vue({
             this.indexContact = index; 
         },
 
+        //aggiunge dell'array il testo e la data che viene poi stampato sull'HTML
         addtext(){
-            console.log(this.addNewMessages);
             let addMessage = {
                 date: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
                 text: this.addNewMessages,
                 status: 'sent',
             };
             this.myContacts[this.indexContact].messages.push(addMessage);
+            this.count++;
             this.addNewMessages = "";
+            console.log(this.count);
+
+        },
+
+        //testo di risposta che si verifica quando l'utente digita un messaggio
+        answerText(){
+            
+            if(this.count){
+                let addMessage = {
+                    date: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+                    text: "ok",
+                    status: 'received',
+                };
+                this.myContacts[this.indexContact].messages.push(addMessage);
+                this.count = 0;
+            }
         }
-        
+    },
+
+    mounted(){
+        setTimeout( this.answerText, 2000);
+        console.log(this.count);
     },
 
     created(){
