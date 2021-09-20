@@ -75,7 +75,7 @@ let app = new Vue({
 
             {
                 name: 'Luisa',
-                avatar: '_4',
+                avatar: '_6',
                 visible: true,
                 messages: [
                     {
@@ -105,6 +105,12 @@ let app = new Vue({
 
         addtext(){
             console.log(this.addNewMessages);
+            let addMessage = {
+                date: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
+                text: this.addNewMessages,
+                status: 'sent',
+            };
+            this.myContacts[this.indexContact].messages.push(addMessage);
             this.addNewMessages = "";
         }
         
