@@ -85,7 +85,7 @@
                             <img :src="`img/avatar${myContacts[indexContact].avatar}.jpg`" alt="avatar contact">
                             <div class="my_chat">
                                 <h6>{{ myContacts[indexContact].name }}</h6>
-                                <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+                                <p>Ultimo accesso alle {{ myContacts[indexContact].messages[myContacts[indexContact].messages.length - 1].date }}</p>
                             </div>
                         </div>
                         <div class="opzion-icon">
@@ -100,7 +100,7 @@
                         <div id="wallpaper-chat">
                             <div v-for="chat in myContacts[indexContact].messages" class="mex" :class="{'send-mex': chat.status == 'sent', 'recive-mex': chat.status == 'received'}">
                                 <p>{{ chat.text }}</p>
-                                <p class="time-send">10/01/2020 16:15:22</p>
+                                <p class="time-send"> {{ chat.date }}</p>
                             </div>
                         </div>
                         <div class="scrollbar d-flex flex-column-reverse justify-content-between">
@@ -112,7 +112,7 @@
                     <!-- sezione digitare un messaggio -->
                     <div class="d-flex align-items-center" id="write-message">
                         <i class="far fa-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input @keyup.enter="addtext" v-model="addNewMessages" type="text" placeholder="Scrivi un messaggio">
                         <i class="fas fa-microphone"></i>
                     </div>
                 </div>

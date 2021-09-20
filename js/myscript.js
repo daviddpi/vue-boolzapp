@@ -94,15 +94,19 @@ let app = new Vue({
 
         myContacts: [],
         indexContact: 0,
-        
+        addNewMessages: "",
     },
 
     methods: {  
         //cliccando su una delle chat, cambia l'indice dell'array
         chooceContact(index){
-            this.indexContact = index;
-            console.log("index: ",this.indexContact); 
+            this.indexContact = index; 
         },
+
+        addtext(){
+            console.log(this.addNewMessages);
+            this.addNewMessages = "";
+        }
         
     },
 
