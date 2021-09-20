@@ -119,10 +119,11 @@ let app = new Vue({
         //testo di risposta che si verifica quando l'utente digita un messaggio
         answerText(){
             let timeContact = this.myContacts[this.indexContact];
+            let randomAnswer = ['Si, va bene', 'Ok' , 'Ci vediamo dopo', "Fantastico! Non vedo l\'ora", 'Non lo so'];
             setTimeout( function(){
                 let addMessage = {
                     date: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
-                    text: "ok",
+                    text: randomAnswer[Math.floor(Math.random() * randomAnswer.length)],
                     status: 'received',
                 };
                 timeContact.messages.push(addMessage);
@@ -138,7 +139,7 @@ let app = new Vue({
                return element;
            });      
         },
-        
+
         //funzione di ricerca, ritorna il nome dell'elemento incluso nell'input e attraverso il v-for lo stampa
         filteredList() {
             return this.myContacts.filter(element => {

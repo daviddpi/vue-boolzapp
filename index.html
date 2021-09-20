@@ -96,16 +96,10 @@
                     </div>
 
                     <!-- sezione messaggi inviati e in arrivo -->
-                    <div class="d-flex container-chat-scrollbar">
-                        <div id="wallpaper-chat">
-                            <div v-for="chat in myContacts[indexContact].messages" class="mex" :class="{'send-mex': chat.status == 'sent', 'recive-mex': chat.status == 'received'}">
-                                <p>{{ chat.text }}</p>
-                                <p class="time-send"> {{ chat.date }}</p>
-                            </div>
-                        </div>
-                        <div class="scrollbar d-flex flex-column-reverse justify-content-between">
-                            <i class="fas fa-angle-down"></i>
-                            <i class="fas fa-angle-up"></i>
+                    <div id="wallpaper-chat">
+                        <div v-for="chat in myContacts[indexContact].messages" class="mex" :class="{'send-mex': chat.status == 'sent', 'recive-mex': chat.status == 'received'}">
+                            <p>{{ chat.text }}</p>
+                            <p class="time-send"> {{ chat.date }}</p>
                         </div>
                     </div>
 

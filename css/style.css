@@ -178,7 +178,7 @@ body{
 
 #search-chat input{
     background-color: #ffffff;
-    border: 0.5px solid #b6b9bb;;
+    border: 0.5px solid #b6b9bb;
     padding: 6px 5px;
     border-left: none;
     width: 100%;
@@ -187,6 +187,8 @@ body{
 /* parte destra */
 #text-chat{
     border-left: 0.7px solid #d6d6d6;
+    border-right: 0.7px solid #d6d6d6;
+    max-height: 100%;
 }
 
 #text-chat img{
@@ -206,9 +208,7 @@ body{
     background-image: url(../img/mine.jpg);
     width: 100%;
     padding: 30px;
-}
-
-#text-chat .container-chat-scrollbar{
+    overflow: auto;
     height: calc(100% - 140px);
 }
 
