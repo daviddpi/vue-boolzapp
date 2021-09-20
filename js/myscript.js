@@ -144,7 +144,6 @@ let app = new Vue({
         filteredList() {
             return this.myContacts.filter(element => {
                 return element.name.toLowerCase().includes(this.search.toLowerCase())
-
             });
         },
     },
