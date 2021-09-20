@@ -51,13 +51,13 @@
                     <!-- ricerca chat -->
                     <div id="search-chat" class="d-flex align-items-center">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search">
                     </div>
 
                     <!-- chat -->
                     <div class="d-flex container-chat-scrollbar justify-content-between">
                         <section id="chat-section"> 
-                            <div @click="chooceContact(index)" v-for="(user, index) in myContacts" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
+                            <div @click="chooceContact(index)" v-for="(user, index) in filteredList" v-for="(user, index) in myContacts" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
                                 <div class="d-flex">
                                     <img :src="`img/avatar${user.avatar}.jpg`" alt="immagine avatar">
                                     <div>

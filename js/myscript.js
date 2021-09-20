@@ -95,7 +95,7 @@ let app = new Vue({
         myContacts: [],
         indexContact: 0,
         addNewMessages: "",
-        count: 0,
+        search: "",
     },
 
     methods: {  
@@ -111,31 +111,24 @@ let app = new Vue({
                 text: this.addNewMessages,
                 status: 'sent',
             };
-            this.myContacts[this.indexContact].messages.push(addMessage);
-            this.count++;
+            this.myContacts[this.indexContact].messages.push(addMessage);   
             this.addNewMessages = "";
-            console.log(this.count);
 
+            this.answerText();
         },
 
         //testo di risposta che si verifica quando l'utente digita un messaggio
         answerText(){
-            
-            if(this.count){
+            let timeContact = this.myContacts[this.indexContact];
+            setTimeout( function(){
                 let addMessage = {
                     date: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString(),
                     text: "ok",
                     status: 'received',
                 };
-                this.myContacts[this.indexContact].messages.push(addMessage);
-                this.count = 0;
-            }
+                timeContact.messages.push(addMessage);
+            }, 4500)
         }
-    },
-
-    mounted(){
-        setTimeout( this.answerText, 2000);
-        console.log(this.count);
     },
 
     created(){
@@ -150,9 +143,17 @@ let app = new Vue({
         //copia l'array e Vue sa quando aggiornare il DOM quando uno dei valori dipendenti dall'array copiato è cambiato
         copyArray(){
             this.myContacts = this.contacts.slice();      
-        },      
+        },
+
+        //funzione di ricerca, ritorna il nome dell'elemento incluso nell'input e attraverso il v-for lo stampa
+        filteredList() {
+            return this.myContacts.filter(element => {
+                return element.name.toLowerCase().includes(this.search.toLowerCase())
+
+            });
+        },
     },
-    
+  
 
     //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri
     filters: {
