@@ -153,7 +153,6 @@ let app = new Vue({
             });
         },
     },
-  
 
     //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri
     filters: {
