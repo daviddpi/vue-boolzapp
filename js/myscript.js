@@ -92,7 +92,6 @@ let app = new Vue({
             },
         ],
 
-        myContacts: [],
         indexContact: 0,
         addNewMessages: "",
         search: "",
@@ -131,20 +130,15 @@ let app = new Vue({
         }
     },
 
-    created(){
-        this.copyArray;
-        this.indexContact = 0;
-        console.log("original: ",this.contacts);
-        console.log("copy: ",this.myContacts);
-    },
-
     computed: {
 
         //copia l'array e Vue sa quando aggiornare il DOM quando uno dei valori dipendenti dall'array copiato è cambiato
-        copyArray(){
-            this.myContacts = this.contacts.slice();      
+        myContacts(){
+           return this.contacts.map( element => {
+               return element;
+           });      
         },
-
+        
         //funzione di ricerca, ritorna il nome dell'elemento incluso nell'input e attraverso il v-for lo stampa
         filteredList() {
             return this.myContacts.filter(element => {
