@@ -130,16 +130,14 @@ let app = new Vue({
             }, 4500)
         },
 
-        searchContact(element){
-                   
-            if(element.name.toLowerCase().includes(this.search.toLowerCase())){
-                return true;
-            } else{
-                return false;
-            }
-           
-            
-        },
+        //funzione di ricerca
+        // searchContact(element){             
+        //     if(element.name.toLowerCase().includes(this.search.toLowerCase())){
+        //         return true;
+        //     } else{
+        //         return false;
+        //     }
+        // },
         
     },
 
@@ -151,14 +149,13 @@ let app = new Vue({
                return element;
             });
         },
-
         
         // funzione di ricerca, ritorna il nome dell'elemento incluso nell'input e attraverso il v-for lo stampa
-        // filteredList() {
-        //     return this.myContacts.filter(element => {
-        //         return element.name.toLowerCase().includes(this.search.toLowerCase());       
-        //     });
-        // },
+        filterContacts() {
+            return this.myContacts.filter(element => {
+                return element.name.toLowerCase().includes(this.search.toLowerCase());       
+            });
+        },
     },
 
     //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri

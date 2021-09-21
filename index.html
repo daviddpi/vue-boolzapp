@@ -56,8 +56,8 @@
 
                     <!-- chat -->
                     <div class="d-flex container-chat-scrollbar justify-content-between">
-                        <section id="chat-section"> 
-                            <div @click="chooceContact(index)" v-for="(user, index) in myContacts"  v-if="searchContact(user)" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
+                        <section id="chat-section">
+                            <div @click="chooceContact(index)" v-for="(user, index) in filterContacts" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
                                 <div class="d-flex">
                                     <img :src="`img/avatar${user.avatar}.jpg`" alt="immagine avatar">
                                     <div>
@@ -81,10 +81,10 @@
                     <!-- nome e ultimo accesso -->
                     <div class="d-flex align-items-center justify-content-between user-header">
                         <div class="d-flex align-items-center ">
-                            <img :src="`img/avatar${myContacts[indexContact].avatar}.jpg`" alt="avatar contact">
+                            <img :src="`img/avatar${filterContacts[indexContact].avatar}.jpg`" alt="avatar contact">
                             <div class="my_chat">
-                                <h6>{{ myContacts[indexContact].name }}</h6>
-                                <p>Ultimo accesso alle {{ myContacts[indexContact].messages[myContacts[indexContact].messages.length - 1].date }}</p>
+                                <h6>{{ filterContacts[indexContact].name }}</h6>
+                                <p>Ultimo accesso alle {{ filterContacts[indexContact].messages[filterContacts[indexContact].messages.length - 1].date }}</p>
                             </div>
                         </div>
                         <div class="opzion-icon">
