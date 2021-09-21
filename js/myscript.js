@@ -128,22 +128,37 @@ let app = new Vue({
                 };
                 timeContact.messages.push(addMessage);
             }, 4500)
-        }
+        },
+
+        // searchContact() {
+        //     return this.myContacts.forEach(element => {
+        //         if(!element.name.toLowerCase().includes(this.search.toLowerCase())){
+        //             console.log(this.search);
+        //             console.log(element.visible);
+        //             return element.visible;
+        //         } else{
+        //             return element.visile = false;
+        //         }
+                 
+        //     });
+        // },
+        
     },
 
     computed: {
 
         //copia l'array e Vue sa quando aggiornare il DOM quando uno dei valori dipendenti dall'array copiato è cambiato
         myContacts(){
-           return this.contacts.map( element => {
+            return this.contacts.map( element => {
                return element;
-           });      
+            });
         },
 
         //funzione di ricerca, ritorna il nome dell'elemento incluso nell'input e attraverso il v-for lo stampa
         filteredList() {
             return this.myContacts.filter(element => {
-                return element.name.toLowerCase().includes(this.search.toLowerCase())
+        
+                return element.name.toLowerCase().includes(this.search.toLowerCase())       
             });
         },
     },
