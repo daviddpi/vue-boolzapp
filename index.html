@@ -57,7 +57,7 @@
                     <!-- chat -->
                     <div class="d-flex container-chat-scrollbar justify-content-between">
                         <section id="chat-section">
-                            <div @click="chooceContact(index)" v-for="(user, index) in filterContacts" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
+                            <div @click="chooceContact(index)" v-for="(user, index) in filterContacts" :class="{'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
                                 <div class="d-flex">
                                     <img :src="`img/avatar${user.avatar}.jpg`" alt="immagine avatar">
                                     <div>
@@ -95,11 +95,20 @@
                     </div>
 
                     <!-- sezione messaggi inviati e in arrivo -->
-                    <div id="wallpaper-chat">
-                        <div v-for="chat in myContacts[indexContact].messages" class="mex" :class="{'send-mex': chat.status == 'sent', 'recive-mex': chat.status == 'received'}">
-                            <p>{{ chat.text }}</p>
-                            <p class="time-send"> {{ chat.date }}</p>
+                    <div id="wallpaper-chat">   
+                        <div v-for="(chat, index) in myContacts[indexContact].messages" class="mex" :class="{'send-mex': chat.status == 'sent', 'recive-mex': chat.status == 'received'}">
+                            <p v-if="myContacts[indexContact].messages.length > 0">{{ chat.text }}</p>
+                            <p v-if="myContacts[indexContact].messages.length > 0" class="time-send"> {{ chat.date }}</p>
+                            <div class="dropdown">
+                                <div>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <a @click="deleteMex( chat, index )">Elimina</a>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
 
                     <!-- sezione digitare un messaggio -->

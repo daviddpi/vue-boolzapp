@@ -138,7 +138,11 @@ let app = new Vue({
         //         return false;
         //     }
         // },
-        
+
+        deleteMex(element,index){
+            this.myContacts[this.indexContact].messages.splice(index, 1);   
+            console.log(this.myContacts[this.indexContact].messages);
+        },
     },
 
     computed: {
@@ -156,6 +160,8 @@ let app = new Vue({
                 return element.name.toLowerCase().includes(this.search.toLowerCase());       
             });
         },
+
+        
     },
 
     //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri

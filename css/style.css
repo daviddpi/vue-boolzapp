@@ -109,6 +109,48 @@ body{
     right: 7px;
 }
 
+.dropdown{
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+
+.fa-chevron-down{
+    font-size: 0.7rem;
+}
+
+.fa-chevron-down:hover{
+    cursor: pointer;
+}
+
+/* dropdown menu */
+  
+.dropdown-content{
+    display: none;
+    position: absolute;
+    right: 0px;
+    min-width: 100px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {background-color: #f1f1f1}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+/* fine dropdown menu */
+
+
 #chat-section{
     overflow: auto;
     width: 100%;
