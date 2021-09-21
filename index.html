@@ -57,7 +57,7 @@
                     <!-- chat -->
                     <div class="d-flex container-chat-scrollbar justify-content-between">
                         <section id="chat-section"> 
-                            <div @click="chooceContact(index)" v-for="(user, index) in filteredList" v-for="(user, index) in myContacts" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
+                            <div @click="chooceContact(index)" v-for="(user, index) in myContacts"  v-if="searchContact(user)" :class="{ 'bg-active': index == indexContact}" class="my_chat d-flex justify-content-between">
                                 <div class="d-flex">
                                     <img :src="`img/avatar${user.avatar}.jpg`" alt="immagine avatar">
                                     <div>

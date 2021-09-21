@@ -130,18 +130,16 @@ let app = new Vue({
             }, 4500)
         },
 
-        // searchContact() {
-        //     return this.myContacts.forEach(element => {
-        //         if(!element.name.toLowerCase().includes(this.search.toLowerCase())){
-        //             console.log(this.search);
-        //             console.log(element.visible);
-        //             return element.visible;
-        //         } else{
-        //             return element.visile = false;
-        //         }
-                 
-        //     });
-        // },
+        searchContact(element){
+                   
+            if(element.name.toLowerCase().includes(this.search.toLowerCase())){
+                return true;
+            } else{
+                return false;
+            }
+           
+            
+        },
         
     },
 
@@ -154,13 +152,13 @@ let app = new Vue({
             });
         },
 
-        //funzione di ricerca, ritorna il nome dell'elemento incluso nell'input e attraverso il v-for lo stampa
-        filteredList() {
-            return this.myContacts.filter(element => {
         
-                return element.name.toLowerCase().includes(this.search.toLowerCase())       
-            });
-        },
+        // funzione di ricerca, ritorna il nome dell'elemento incluso nell'input e attraverso il v-for lo stampa
+        // filteredList() {
+        //     return this.myContacts.filter(element => {
+        //         return element.name.toLowerCase().includes(this.search.toLowerCase());       
+        //     });
+        // },
     },
 
     //il messaggio di preview viene tagliato se è maggiore di un tot numero di caratteri
