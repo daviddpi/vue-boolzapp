@@ -95,6 +95,10 @@ let app = new Vue({
         indexContact: 0,
         addNewMessages: "",
         search: "",
+        showMenu: {
+            visible: false,
+            index: 0
+        },
     },
 
     methods: {  
@@ -130,19 +134,17 @@ let app = new Vue({
             }, 4500)
         },
 
-        //funzione di ricerca
-        // searchContact(element){             
-        //     if(element.name.toLowerCase().includes(this.search.toLowerCase())){
-        //         return true;
-        //     } else{
-        //         return false;
-        //     }
-        // },
-
         deleteMex(element,index){
             this.myContacts[this.indexContact].messages.splice(index, 1);   
             console.log(this.myContacts[this.indexContact].messages);
         },
+
+        toggleMenu(element, index){
+            this.showMenu.index = index;
+            this.showMenu.visible = !this.showMenu.visible;
+            console.log(this.showMenu.visible);
+        },
+
     },
 
     computed: {

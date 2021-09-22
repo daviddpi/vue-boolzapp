@@ -7,7 +7,6 @@
 
     <!-- link bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     
     <!-- link font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -100,24 +99,14 @@
                         <div v-for="(chat, index) in myContacts[indexContact].messages" class="mex" :class="{'send-mex': chat.status == 'sent', 'recive-mex': chat.status == 'received'}">
                             <p v-if="myContacts[indexContact].messages.length > 0">{{ chat.text }}</p>
                             <p v-if="myContacts[indexContact].messages.length > 0" class="time-send"> {{ chat.date }}</p>
-                            <!-- <div class="dropdown">
-                                <div>
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                                <div class="dropdown-content">
-                                    <a @click="deleteMex( chat, index )">Elimina</a>
-                                </div>
-                            </div> -->
                             <div class="dropdown">
-                                <div class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                <div>
+                                    <i @click="toggleMenu( chat, index )" class="fas fa-chevron-down"></i>
                                 </div>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li>
+                                <div v-if="showMenu.visible && showMenu.index == index" class="dropdown-content">
                                     <a @click="deleteMex( chat, index )">Elimina</a>
-                                  </li>
-                                </ul>
-                              </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
