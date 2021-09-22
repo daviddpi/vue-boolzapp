@@ -115,6 +115,16 @@ body{
     right: 15px;
 }
 
+ul.dropdown-menu.show{
+    transform: translate(0px, 21px);
+}
+
+.show li{
+    transform: translate(7px, 6px);
+    /* padding-right: 5px; */
+}
+
+
 .fa-chevron-down{
     font-size: 0.7rem;
 }
@@ -124,8 +134,13 @@ body{
 }
 
 /* dropdown menu */
+/* .dropdown{
+    position: absolute;
+    top: 0px;
+    right: 15px;
+} */
   
-.dropdown-content{
+/* .dropdown-content{
     display: none;
     position: absolute;
     right: 0px;
@@ -146,7 +161,7 @@ body{
   
 .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
   
 /* fine dropdown menu */
 
