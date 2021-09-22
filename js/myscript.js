@@ -135,11 +135,10 @@ let app = new Vue({
         },
 
         deleteMex(element,index){
-            this.myContacts[this.indexContact].messages.splice(index, 1);   
+            this.myContacts[this.indexContact].messages.splice(index, 1);
         },
 
-        copyMex(element, index) {
-            
+        copyMex(element, index) {          
             let copyText = element.text;
             navigator.clipboard.writeText(copyText);
             this.showMenu.index = index;
@@ -151,9 +150,8 @@ let app = new Vue({
                 this.showMenu.visible = false;
             }
             this.showMenu.index = index;
-            this.showMenu.visible = !this.showMenu.visible;
+            this.showMenu.visible = !this.showMenu.visible; 
         },
-
     },
 
     computed: {
