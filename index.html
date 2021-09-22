@@ -62,10 +62,10 @@
                                     <img :src="`img/avatar${user.avatar}.jpg`" alt="immagine avatar">
                                     <div>
                                         <h6>{{ user.name }}</h6>
-                                        <p class="user-message">{{ user.messages[user.messages.length - 1].text | cutString() }} </p>
+                                        <p class="user-message" v-if="myContacts[index].messages.length > 0">{{ user.messages[user.messages.length - 1].text | cutString() }} </p>
                                     </div>
                                 </div>
-                                <p>{{ user.messages[user.messages.length - 1].date }}</p>
+                                <p v-if="myContacts[index].messages.length > 0">{{ user.messages[user.messages.length - 1].date }}</p>
                             </div>
                         </section>
                         <div class="scrollbar d-flex flex-column-reverse justify-content-between">
@@ -84,7 +84,7 @@
                             <img :src="`img/avatar${filterContacts[indexContact].avatar}.jpg`" alt="avatar contact">
                             <div class="my_chat">
                                 <h6>{{ filterContacts[indexContact].name }}</h6>
-                                <p>Ultimo accesso alle {{ filterContacts[indexContact].messages[filterContacts[indexContact].messages.length - 1].date }}</p>
+                                <p v-if="myContacts[indexContact].messages.length > 0">Ultimo accesso alle {{ filterContacts[indexContact].messages[filterContacts[indexContact].messages.length - 1].date }}</p>
                             </div>
                         </div>
                         <div class="opzion-icon">
