@@ -104,7 +104,15 @@
                                     <i @click="toggleMenu( chat, index )" class="fas fa-chevron-down"></i>
                                 </div>
                                 <div v-if="showMenu.visible && showMenu.index == index" class="dropdown-content">
-                                    <a @click="deleteMex( chat, index )">Elimina</a>
+                                    <ul>
+                                        <li>
+                                            <a @click="deleteMex( chat, index )">Elimina</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a @click="copyMex( chat, index )">Copia</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

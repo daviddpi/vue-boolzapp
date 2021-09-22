@@ -136,13 +136,22 @@ let app = new Vue({
 
         deleteMex(element,index){
             this.myContacts[this.indexContact].messages.splice(index, 1);   
-            console.log(this.myContacts[this.indexContact].messages);
+        },
+
+        copyMex(element, index) {
+            
+            let copyText = element.text;
+            navigator.clipboard.writeText(copyText);
+            this.showMenu.index = index;
+            this.showMenu.visible = false;
         },
 
         toggleMenu(element, index){
+            if(this.showMenu.index != index){
+                this.showMenu.visible = false;
+            }
             this.showMenu.index = index;
             this.showMenu.visible = !this.showMenu.visible;
-            console.log(this.showMenu.visible);
         },
 
     },
@@ -162,7 +171,6 @@ let app = new Vue({
                 return element.name.toLowerCase().includes(this.search.toLowerCase());       
             });
         },
-
         
     },
 
@@ -177,3 +185,4 @@ let app = new Vue({
     }
 
 });
+

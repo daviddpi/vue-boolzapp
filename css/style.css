@@ -115,17 +115,26 @@ body{
     right: 15px;
 }
 
-.dropdown-content a{
+.dropdown-content ul{
+    list-style-type: none;
+    border: 1px solid black;
+    border-bottom: none;
+    background-color: white;
     position: absolute;
     right: 50%;
+    padding: 0;
+    z-index: 2;
+}
+
+.dropdown-content li{
+    
     font-weight: bold;
-    border: 1px solid black;
-    background-color: white;
+    border-bottom: 1px solid black;
     padding: 5px 20px;
 }
 
-.dropdown-content a:hover{
-    background-color: lightgreen;
+.dropdown-content li:hover{
+    background-color: #d5f9ba;
     cursor: pointer;
 }
 
