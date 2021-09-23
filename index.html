@@ -20,7 +20,7 @@
     <title>Boolzapp</title>
 </head>
 <body>
-    <div id="root" class="mega-container">
+    <div @click="clickAnywhere" id="root" class="mega-container">
         <div id="bg-darkgreen"></div>
 
         <div class="container">
@@ -101,13 +101,12 @@
                             <p v-if="myContacts[indexContact].messages.length > 0" class="time-send"> {{ chat.date }}</p>
                             <div class="dropdown">
                                 <div>
-                                    <i @click="toggleMenu( chat, index )" class="fas fa-chevron-down"></i>
+                                    <i @click.stop="toggleMenu( chat, index )" class="fas fa-chevron-down"></i>
                                 </div>
                                 <div v-if="showMenu.visible && showMenu.index == index" class="dropdown-content">
                                     <ul>
                                         <li>
                                             <a @click="deleteMex( chat, index )">Elimina</a>
-                                            
                                         </li>
                                         <li>
                                             <a @click="copyMex( chat, index )">Copia</a>

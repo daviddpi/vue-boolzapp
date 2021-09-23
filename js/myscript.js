@@ -136,6 +136,7 @@ let app = new Vue({
 
         deleteMex(element,index){
             this.myContacts[this.indexContact].messages.splice(index, 1);
+            this.showMenu.visible = false;
         },
 
         copyMex(element, index) {          
@@ -148,10 +149,16 @@ let app = new Vue({
         toggleMenu(element, index){
             if(this.showMenu.index != index){
                 this.showMenu.visible = false;
-            }
+            };
             this.showMenu.index = index;
-            this.showMenu.visible = !this.showMenu.visible; 
+            this.showMenu.visible = !this.showMenu.visible;
         },
+
+        clickAnywhere(){
+            if(this.showMenu.visible == true){
+                this.showMenu.visible = false;
+            }
+        }
     },
 
     computed: {
