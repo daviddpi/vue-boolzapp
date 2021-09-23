@@ -106,10 +106,10 @@
                                 <div v-if="showMenu.visible && showMenu.index == index" class="dropdown-content">
                                     <ul>
                                         <li>
-                                            <a @click="deleteMex( chat, index )">Elimina</a>
+                                            <a @click.stop="deleteMex( chat, index )">Elimina</a>
                                         </li>
                                         <li>
-                                            <a @click="copyMex( chat, index )">Copia</a>
+                                            <a @click.stop="copyMex( chat, index )">Copia</a>
                                         </li>
                                     </ul>
                                 </div>

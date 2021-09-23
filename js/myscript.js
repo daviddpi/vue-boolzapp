@@ -91,7 +91,7 @@ let app = new Vue({
                 ],
             },
         ],
-
+        
         indexContact: 0,
         addNewMessages: "",
         search: "",
