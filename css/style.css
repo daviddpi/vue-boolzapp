@@ -37,6 +37,11 @@ body{
 .myBtn-confirm{
     margin: 0 35px;
 }
+
+.myBtn-info{
+    background-color: #009688;
+    color: white;
+}
 /* fine stile box di conferma eliminazione */
 
 .mega-container{
