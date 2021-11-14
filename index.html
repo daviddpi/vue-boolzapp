@@ -44,6 +44,8 @@
     
                         <input value="Annulla" class="btn myBtn-info myBtn-confirm" type="button"
                         @click.stop="confirmDelete('Annulla')">
+
+                        <div @keyup.esc="confirmDelete('Annulla')"></div>
         
                     </form>
                 </div>

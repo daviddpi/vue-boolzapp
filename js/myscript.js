@@ -149,7 +149,6 @@ let app = new Vue({
             let confirm = document.querySelector('#confirm');
 
             if(value == "Cancella"){
-                
                 this.myContacts[this.indexContact].messages.splice(this.indexDelete, 1);
             }
 
@@ -177,7 +176,18 @@ let app = new Vue({
             if(this.showMenu.visible == true){
                 this.showMenu.visible = false;
             }
-        }
+        },
+
+    },
+
+    //premendo il tasto esc chiude il box conferma elimina messaggio
+    created(){
+        let that = this;
+        document.addEventListener('keyup', function (evt) {
+            if (evt.keyCode === 27) {
+                that.confirmDelete(evt);
+            }
+        });
     },
 
     computed: {
