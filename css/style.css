@@ -19,6 +19,11 @@ body{
     z-index: 5;
 }
 
+.blur-effect{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
 .box-confirm{
     display: flex;
     justify-content: center;

@@ -138,6 +138,7 @@ let app = new Vue({
         deleteMex(index){
             
             let confirm = document.querySelector('#confirm');
+            document.querySelector('.container').classList.add("blur-effect");
             confirm.classList.remove("d-none");
             this.indexDelete = index;
 
@@ -152,6 +153,7 @@ let app = new Vue({
 
             //aggiunge la classe display none per chiudere la box di conferma
             confirm.classList.add("d-none");
+            document.querySelector('.container').classList.remove("blur-effect");
             this.showMenu.visible = false;
         },
 
