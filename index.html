@@ -23,6 +23,33 @@
     <div @click="clickAnywhere" id="root" class="mega-container">
         <div id="bg-darkgreen"></div>
 
+        <!-- box conferma eliminazione messaggio -->
+        <div id="confirm" class="d-none">
+            <div class="display-overlay"></div>
+            <div class="box-confirm text-center p-3">
+                <div>
+                    <div class="mb-3">
+                        <h3>
+                            Sei sicuro?
+                        </h3>
+                        <h6>
+                            Vuoi davvero cancellare il messaggio. <br>
+                            Una volta cancellato non potrai tornare indietro
+                        </h6>
+                    </div>
+                    <form name="formConfirm" class="p-2" action="index.html" method="post">
+        
+                        <input value="Cancella" class="btn btn-danger myBtn-confirm" type="button"
+                        @click.stop="confirmDelete('Cancella')">
+    
+                        <input value="Annulla" class="btn btn-info myBtn-confirm" type="button"
+                        @click.stop="confirmDelete('Annulla')">
+        
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row">
                 <!-- parte sinistra  -->
@@ -106,7 +133,7 @@
                                 <div v-if="showMenu.visible && showMenu.index == index" class="dropdown-content">
                                     <ul>
                                         <li>
-                                            <a @click.stop="deleteMex( chat, index )">Elimina</a>
+                                            <a @click.stop="deleteMex(index)">Elimina</a>
                                         </li>
                                         <li>
                                             <a @click.stop="copyMex( chat, index )">Copia</a>

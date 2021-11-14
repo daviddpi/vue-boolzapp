@@ -93,6 +93,7 @@ let app = new Vue({
         ],
         
         indexContact: 0,
+        indexDelete: 0,
         addNewMessages: "",
         search: "",
         showMenu: {
@@ -134,8 +135,26 @@ let app = new Vue({
             }, 4500)
         },
 
-        deleteMex(element,index){
-            this.myContacts[this.indexContact].messages.splice(index, 1);
+        deleteMex(index){
+            
+            let confirm = document.querySelector('#confirm');
+            confirm.classList.remove("d-none");
+            this.indexDelete = index;
+            // this.myContacts[this.indexContact].messages.splice(index, 1);
+            // this.showMenu.visible = false;
+            
+        },
+
+        confirmDelete(value){
+            let confirm = document.querySelector('#confirm');
+
+            if(value == "Cancella"){
+                
+                this.myContacts[this.indexContact].messages.splice(this.indexDelete, 1);
+            }
+
+            //aggiunge la classe display none per chiudere la box di conferma
+            confirm.classList.add("d-none");
             this.showMenu.visible = false;
         },
 

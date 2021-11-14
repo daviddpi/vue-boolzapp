@@ -4,6 +4,41 @@ body{
     padding: 20px 0;
 }
 
+/* stile box conferma eliminazione */
+#confirm{
+    /* display: none; */
+}
+
+.display-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.box-confirm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 230px;
+    width: 450px;
+    z-index: 6;
+    background-color: #dddddd;
+    border-radius: 15px;
+}
+
+.myBtn-confirm{
+    margin: 0 35px;
+}
+/* fine stile box di conferma eliminazione */
+
 .mega-container{
     height: 100%;
 }
