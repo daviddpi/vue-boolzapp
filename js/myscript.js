@@ -140,9 +140,7 @@ let app = new Vue({
             let confirm = document.querySelector('#confirm');
             confirm.classList.remove("d-none");
             this.indexDelete = index;
-            // this.myContacts[this.indexContact].messages.splice(index, 1);
-            // this.showMenu.visible = false;
-            
+
         },
 
         confirmDelete(value){

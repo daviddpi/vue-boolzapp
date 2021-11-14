@@ -32,6 +32,9 @@ body{
     z-index: 6;
     background-color: #dddddd;
     border-radius: 15px;
+    animation-name: showConfirm;
+    animation-duration: 0.3s;
+
 }
 
 .myBtn-confirm{
@@ -41,6 +44,20 @@ body{
 .myBtn-info{
     background-color: #009688;
     color: white;
+}
+
+@keyframes showConfirm{
+    0%{
+        opacity: 0;
+        top: 15%;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 1;
+        top: 40%;
+    }
 }
 /* fine stile box di conferma eliminazione */
 
